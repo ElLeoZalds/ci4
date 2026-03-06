@@ -24,3 +24,11 @@ $routes->get('/coder', 'Carrera::showDesign');
 
 $routes->get('/creativo', 'Carrera::showDesign');
 $routes->get('/marketing', 'Carrera::showDesign');
+
+//Nuevas rutas para navegar desde el Dashboard
+$routes->get('/clientes', 'Cliente::index');
+$routes->get('/productos', 'Producto::index');
+$routes->get('/proveedores', 'Proveedor::index');
+
+
+$routes->get('/diario', 'Reportes::index');
