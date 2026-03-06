@@ -30,5 +30,7 @@ $routes->get('/clientes', 'Cliente::index');
 $routes->get('/productos', 'Producto::index');
 $routes->get('/proveedores', 'Proveedor::index');
 
-
-$routes->get('/diario', 'Reportes::index');
+$routes->get('/diario', 'Reportes::diario');
+$routes->get('/semanal', 'Reportes::semanal');
+$routes->get('/mensual', 'Reportes::mensual');
+$routes->get('/personalizado', 'Reportes::personalizado');
