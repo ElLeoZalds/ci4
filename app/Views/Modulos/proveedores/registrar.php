@@ -16,18 +16,18 @@
 
             <div class="form-group">
                 <label for="ruc">RUC</label>
-                <input type="text" class="form-control" id="ruc" name="ruc" minlength="11" maxlength="11" required>
+                <input type="text" class="form-control" id="ruc" name="ruc" maxlength="11" pattern="\d{11}" required>
             </div>
 
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="text" class="form-control" id="telefono" name="telefono" minlength="9" maxlength="9"
+                <input type="text" class="form-control" id="telefono" name="telefono" maxlength="9" pattern="\d{9}"
                     required>
             </div>
 
             <div class="form-group">
                 <label for="representante">Representante</label>
-                <input type="text" class="form-control" id="representante<" name="representante" required>
+                <input type="text" class="form-control" id="representante" name="representante" required>
             </div>
 
             <button type="submit" class="btn btn-outline-primary">Registrar</button>

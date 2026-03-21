@@ -16,13 +16,12 @@
 
             <div class="form-group">
                 <label for="dni">DNI</label>
-                <input type="number" class="form-control" id="dni" name="dni" minlength="8" maxlength="8" required>
+                <input type="text" class="form-control" id="dni" name="dni" maxlength="8" pattern="\d{8}" required>
             </div>
 
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="number" class="form-control" id="telefono" name="telefono" minlength="9" maxlength="9"
-                    required>
+                <input type="text" class="form-control" id="telefono" name="telefono" maxlength="9" pattern="\d{9}" required>
             </div>
 
             <button type="submit" class="btn btn-outline-primary">Registrar</button>
