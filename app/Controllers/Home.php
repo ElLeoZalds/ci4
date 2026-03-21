@@ -6,19 +6,18 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        return view(name: 'senati');
+        return view('senati');
     }
 
     /**
-     * El dashboard requiere de 2 partes esenciales: HEADER Y FOOTER
+     * El Dashboard requiere dos partes escenciales: HEADER, FOOTER
      * @return string
      */
-    public function dashboard(): string
-    {
+    public function dashboard(): string{
         $data = [
-            'header' => view('Partials/header'),
-            'footer' => view('Partials/footer'),
+            'header'    => view('Partials/header'),  
+            'footer'    => view('Partials/footer'),
         ];
-        return view('dashboard', $data );
+        return view('dashboard', $data); //Vista a devolver
     }
 }

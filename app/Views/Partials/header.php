@@ -12,13 +12,13 @@
     <title>Proyecto de Innovación</title>
 
     <!-- Custom fonts for this template-->
-    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href=<?= base_url('vendor/fontawesome-free/css/all.min.css') ?> " rel=" stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="<?= base_url('css/sb-admin-2.min.css') ?>" rel="stylesheet">
 
 </head>
 
@@ -61,11 +61,11 @@
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo"
                     aria-expanded="true" aria-controls="collapseTwo">
                     <i class="fas fa-fw fa-cog"></i>
-                    <span>Mantenimmiento</span>
+                    <span>Mantenimiento</span>
                 </a>
                 <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Sistema de Almacén:</h6>
+                        <h6 class="collapse-header">Sistema de almacén</h6>
                         <a class="collapse-item" href="<?= base_url('clientes') ?>">Clientes</a>
                         <a class="collapse-item" href="<?= base_url('proveedores') ?>">Proveedores</a>
                         <a class="collapse-item" href="<?= base_url('productos') ?>">Productos</a>
@@ -83,11 +83,11 @@
                 <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities"
                     data-parent="#accordionSidebar">
                     <div class="bg-white py-2 collapse-inner rounded">
-                        <h6 class="collapse-header">Sistema de Almacén:</h6>
-                        <a class="collapse-item" href="<?= base_url('diario') ?>">Diario</a>
-                        <a class="collapse-item" href="<?= base_url('semanal') ?>">Semanal</a>
-                        <a class="collapse-item" href="<?= base_url('mensual') ?>">Mensual</a>
-                        <a class="collapse-item" href="<?= base_url('personalizado') ?>">Personalizado</a>
+                        <h6 class="collapse-header">Sistema de almacén:</h6>
+                        <a class="collapse-item" href="utilities-color.html">Diario</a>
+                        <a class="collapse-item" href="utilities-border.html">Semanal</a>
+                        <a class="collapse-item" href="utilities-animation.html">Mensual</a>
+                        <a class="collapse-item" href="utilities-other.html">Personalizado</a>
                     </div>
                 </div>
             </li>
@@ -98,16 +98,6 @@
             <!-- Sidebar Toggler (Sidebar) -->
             <div class="text-center d-none d-md-inline">
                 <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
-
-            <!-- Sidebar Message -->
-            <div class="sidebar-card d-none d-lg-flex">
-                <img class="sidebar-card-illustration mb-2" src="img/undraw_rocket.svg" alt="...">
-                <p class="text-center mb-2"><strong>SB Admin Pro</strong> is packed with premium features, components,
-                    and more!
-                </p>
-                <a class="btn btn-success btn-sm" href="https://startbootstrap.com/theme/sb-admin-pro">Upgrade to
-                    Pro!</a>
             </div>
 
         </ul>
@@ -235,7 +225,8 @@
                                 </h6>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <img class="rounded-circle" src="<?= base_url("img/undraw_profile_1.svg") ?>"
+                                            alt="...">
                                         <div class="status-indicator bg-success"></div>
                                     </div>
                                     <div class="font-weight-bold">
@@ -246,7 +237,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_2.svg" alt="...">
+                                        <img class="rounded-circle" src="<?= base_url("img/undraw_profile_2.svg") ?>"
+                                            alt="...">
                                         <div class="status-indicator"></div>
                                     </div>
                                     <div>
@@ -257,7 +249,8 @@
                                 </a>
                                 <a class="dropdown-item d-flex align-items-center" href="#">
                                     <div class="dropdown-list-image mr-3">
-                                        <img class="rounded-circle" src="img/undraw_profile_3.svg" alt="...">
+                                        <img class="rounded-circle" src="<?= base_url("img/undraw_profile_3.svg") ?>"
+                                            alt="...">
                                         <div class="status-indicator bg-warning"></div>
                                     </div>
                                     <div>
@@ -289,7 +282,8 @@
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <img class="img-profile rounded-circle"
+                                    src="<?= base_url("img/undraw_profile.svg") ?>">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"

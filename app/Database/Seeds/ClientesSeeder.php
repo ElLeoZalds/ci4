@@ -11,23 +11,23 @@ class ClientesSeeder extends Seeder
         $data = [
             [
                 "apellidos" => "Contreras Pachas",
-                "nombres" => "Carolina",
-                "dni" => "44556677",
-                "telefono" => "956124536"
+                "nombres"   => "Carolina",
+                "dni"       => "44556677",
+                "telefono"  => "956111222"
             ],
             [
                 "apellidos" => "Peñaloza Mejía",
-                "nombres" => "Gabriela",
-                "dni" => "77441100",
-                "telefono" => "923254784"
+                "nombres"   => "Gabriela",
+                "dni"       => "77441100",
+                "telefono"  => "956000111"
             ],
             [
                 "apellidos" => "Salvatierra Mendoza",
-                "nombres" => "Esther",
-                "dni" => "74757876",
-                "telefono" => "963852741"
+                "nombres"   => "Esther",
+                "dni"       => "74748585",
+                "telefono"  => "956777111"
             ]
-        ]; //Fin $data
+        ]; //fin $data
 
         $this->db->table("clientes")->insertBatch($data);
     }
