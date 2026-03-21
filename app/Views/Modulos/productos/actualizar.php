@@ -20,13 +20,13 @@
 
             <div class="form-group">
                 <label for="precio">Precio</label>
-                <input type="text" value="<?= $registro['precio'] ?>" class="form-control" id="precio" name="precio"
+                <input type="number" step="0.01" value="<?= $registro['precio'] ?>" class="form-control" id="precio" name="precio"
                     required>
             </div>
 
             <div class="form-group">
                 <label for="stock">Stock</label>
-                <input type="text" value="<?= $registro['stock'] ?>" class="form-control" id="stock" name="stock"
+                <input type="number" value="<?= $registro['stock'] ?>" class="form-control" id="stock" name="stock"
                     required>
             </div>
 

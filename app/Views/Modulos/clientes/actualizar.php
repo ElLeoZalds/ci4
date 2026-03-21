@@ -21,13 +21,13 @@
 
             <div class="form-group">
                 <label for="dni">DNI</label>
-                <input type="text" value="<?= $registro["dni"] ?>" class="form-control" id="dni" name="dni"
+                <input type="number" value="<?= $registro["dni"] ?>" class="form-control" id="dni" name="dni"
                     minlength="8" maxlength="8" required>
             </div>
 
             <div class="form-group">
                 <label for="telefono">Teléfono</label>
-                <input type="text" value="<?= $registro["telefono"] ?>" class="form-control" id="telefono"
+                <input type="number" value="<?= $registro["telefono"] ?>" class="form-control" id="telefono"
                     name="telefono" minlength="9" maxlength="9" required>
             </div>
 

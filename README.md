@@ -1,69 +1,91 @@
-# CodeIgniter 4 Application Starter
+# Sistema CRUD - SENATI
 
-## What is CodeIgniter?
+Aplicación web desarrollada con CodeIgniter 4 que permite gestionar clientes, productos y proveedores mediante un sistema CRUD básico.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## 📌 Descripción
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Este proyecto permite realizar las operaciones principales: crear, listar, actualizar y eliminar datos en una base de datos llamada **senati**.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+También utiliza migraciones y seeders para manejar la base de datos de forma ordenada.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+Es un proyecto pensado para practicar el uso del patrón MVC con CodeIgniter 4.
 
-## Installation & updates
+## ⚙️ Tecnologías utilizadas
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+- PHP 8.2+
+- CodeIgniter 4
+- MySQL / MariaDB
+- HTML, CSS y JavaScript
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+## 🧩 Funcionalidades
 
-## Setup
+### 👥 Clientes
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+- Registrar clientes
+- Listar clientes
+- Editar clientes
+- Eliminar clientes
 
-## Important Change with index.php
+### 📦 Productos
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+- Registrar productos
+- Listar productos
+- Editar productos
+- Eliminar productos
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### 🏢 Proveedores
 
-**Please** read the user guide for a better explanation of how CI4 works!
+- Registrar proveedores
+- Listar proveedores
+- Editar proveedores
+- Eliminar proveedores
 
-## Repository Management
+## 🌐 Rutas principales
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+- /clientes
+- /productos
+- /proveedores
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+## 🗄️ Base de Datos
 
-## Server Requirements
+Base de datos: **senati**
 
-PHP version 8.2 or higher is required, with the following extensions installed:
+### Tabla: clientes
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- id
+- apellidos
+- nombres
+- dni
+- telefono
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - The end of life date for PHP 8.1 was December 31, 2025.
-> - If you are still using below PHP 8.2, you should upgrade immediately.
-> - The end of life date for PHP 8.2 will be December 31, 2026.
+### Tabla: productos
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+- id
+- tipo
+- descripcion
+- precio
+- stock
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+### Tabla: proveedores
+
+- id
+- razonsocial
+- direccion
+- ruc
+- telefono
+- representante
+
+## 🔄 Migraciones
+
+Pasos básicos:
+
+1. Crear la base de datos
+2. Configurar el archivo `.env`
+3. Crear migración:
+
+## 👨‍💻 Autor
+
+Desarrollado por: **Palacios Gonzales Leonardo Alexander**
+
+🔗 GitHub: https://github.com/ElLeoZalds  
+📁 Repositorio: https://github.com/ElLeoZalds/ci4.git

@@ -16,12 +16,12 @@
 
             <div class="form-group">
                 <label for="precio">Precio</label>
-                <input type="text" class="form-control" id="precio" name="precio" required>
+                <input type="number" step="0.01" class="form-control" id="precio" name="precio" required>
             </div>
 
             <div class="form-group">
                 <label for="stock">Stock</label>
-                <input type="text" class="form-control" id="stock" name="stock" required>
+                <input type="number" class="form-control" id="stock" name="stock" required>
             </div>
 
             <button type="submit" class="btn btn-outline-primary">Registrar</button>
