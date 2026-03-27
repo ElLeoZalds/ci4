@@ -80,9 +80,34 @@
 <!-- Fin zona de modal -->
 
 <script>
-    document.addEventListener('DOMContentLoaded', function () {
+    document.addEventListener('DOMContentLoaded', function() {
 
-        const tabla = document.querySelector("#content-vehiculos");
+        const tabla = document.querySelector("#content-vehiculos"); // <tbody>
+        const listaMarcas = document.querySelector("#marcas"); // <select>
+
+        async function obtenerMarcas() {
+            try {
+                const response = await fetch(`<?= base_url('marcas/listar') ?>`)
+                const data = await response.json();
+
+                if (response.status !== 200) {
+                    return;
+                }
+                if (!data) {
+                    return;
+                }
+
+                data.forEach(element => {
+                    const tagOption = document.createElement("option");
+                    tagOption.value = element.id;
+                    tagOption.innerText = element.marca;
+                    listaMarcas.appendChild(tagOption);
+                })
+
+            } catch (error) {
+                console.error("No se pudo obtener las marcas:", error);
+            }
+        }
 
         async function obtenerVehiculos() {
             try {
@@ -90,10 +115,14 @@
                 const data = await response.json();
 
                 // Si el servidor no respondió correcatamente
-                if (response.status !== 200) { return; }
+                if (response.status !== 200) {
+                    return;
+                }
 
                 // Si no encontramos datos...
-                if (!data) { return; }
+                if (!data) {
+                    return;
+                }
 
                 tabla.innerHTML = ``
 
@@ -118,6 +147,8 @@
             }
         }
 
+        // Función autoejecución
+        obtenerMarcas();
         obtenerVehiculos();
 
     })
