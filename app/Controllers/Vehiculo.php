@@ -42,13 +42,13 @@ class Vehiculo extends BaseController
         if ($vehiculo->insert($data)) {
             return $this->response->setJSON([
                 "success" => true,
-                "message" => "Vehículo registrado correctamente"
+                "message" => "Registrado correctamente"
             ]);
         }
 
         return $this->response->setJSON([
             "success" => false,
-            "message" => "Error al registrar el vehículo"
+            "message" => "Error al registrar"
         ]);
     }
 }
