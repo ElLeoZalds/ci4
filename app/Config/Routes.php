@@ -50,3 +50,5 @@ $routes->get('/vehiculos', 'Vehiculo::index');
 
 // BD > Modelo > Controlador > Ruta > JS > VistaHTML
 $routes->get('/vehiculos/listar', 'Vehiculo::getVehiculos'); // Ruta para obtener los datos de los vehículos en formato JSON
+
+$routes->get('marcas/listar', 'Marca::getMarcas');
