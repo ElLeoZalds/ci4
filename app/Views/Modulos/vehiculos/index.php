@@ -18,7 +18,7 @@
                     <th>Acciones</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="content-vehiculos">
 
             </tbody>
         </table>
@@ -26,7 +26,6 @@
 </div>
 
 <!-- Zona de modal -->
-
 <div class="modal fade" id="modal-vehiculos" data-backdrop="static" data-keyboard="false" tabindex="-1"
     aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -78,6 +77,50 @@
         </div>
     </div>
 </div>
-
 <!-- Fin zona de modal -->
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+
+        const tabla = document.querySelector("#content-vehiculos");
+
+        async function obtenerVehiculos() {
+            try {
+                const response = await fetch(`<?= base_url('vehiculos/listar') ?>`)
+                const data = await response.json();
+
+                // Si el servidor no respondió correcatamente
+                if (response.status !== 200) { return; }
+
+                // Si no encontramos datos...
+                if (!data) { return; }
+
+                tabla.innerHTML = ``
+
+                data.forEach(element => {
+                    tabla.innerHTML += `
+                    <tr>
+                        <td>${element.id}</td>
+                        <td>${element.marca}</td>
+                        <td>${element.modelo}</td>
+                        <td>${element.anio}</td>
+                        <td>${element.color}</td>
+                        <td>${element.precio}</td>
+                        <td>
+                            <a href='#' class='btn btn-sm btn-outline-primary rounded-0'>Editar</a>
+                            <a href='#' class='btn btn-sm btn-outline-danger rounded-0'>Eliminar</a>
+                        </td>
+                    </tr>
+                    `
+                })
+            } catch (error) {
+                console.error("Error al obtener los vehículos:", error);
+            }
+        }
+
+        obtenerVehiculos();
+
+    })
+</script>
+
 <?= $footer ?>
