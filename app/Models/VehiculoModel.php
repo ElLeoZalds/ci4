@@ -9,7 +9,7 @@ class VehiculoModel extends Model
     protected $table = "vehiculos";
     protected $primaryKey = 'id';
     protected $returnType = 'array';
-    protected $allowedFields = ['idmarca', 'modelo', 'anio', 'color', 'precio'];
+    protected $allowedFields = ['idmarca', 'modelo', 'anio', 'color', 'precio', 'created_at', 'updated_at'];
 
     // Campos de auditoría => ¿Cuándo se creó?, ¿Cuándo se modificó?
     protected $useTimestapms = true;

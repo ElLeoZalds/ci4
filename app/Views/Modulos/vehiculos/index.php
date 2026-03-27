@@ -37,7 +37,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="" id="formulario-vehiculos" autocapitalize="off">
+                <form id="formulario-vehiculos" autocapitalize="off">
                     <div class="form-group">
                         <label for="marcas">Marca:</label>
                         <select name="marcas" id="marcas" class="form-control rounded-0" required>
@@ -82,8 +82,49 @@
 <script>
     document.addEventListener('DOMContentLoaded', function() {
 
+        // Referencias, declaración de objetos
         const tabla = document.querySelector("#content-vehiculos"); // <tbody>
         const listaMarcas = document.querySelector("#marcas"); // <select>
+        const formulario = document.querySelector("#formulario-vehiculos"); // <form>
+
+        // Funciones asíncronas
+        async function registrarVehiculo() {
+            try {
+                // Objeto que contenga los datos para el registro
+                const vehiculo = {
+                    idmarca: listaMarcas.value,
+                    modelo: document.querySelector("#modelo").value,
+                    anio: document.querySelector("#anio").value,
+                    color: document.querySelector("#color").value,
+                    precio: document.querySelector("#precio").value,
+                }
+                // Se envía la solicitud
+                const response = await fetch(`<?= base_url('vehiculos/registrar') ?>`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(vehiculo)
+                })
+
+                const data = await response.json();
+                alert(data.message);
+
+                // No funcionó
+                if (!data.success) {
+                    return;
+                }
+
+                // Todo bien
+                // Cerrar modal
+                $('#modal-vehiculos').modal('hide');
+
+                // Recargar tabla
+                obtenerVehiculos();
+            } catch (error) {
+                console.error("No se logró registrar", error);
+            }
+        }
 
         async function obtenerMarcas() {
             try {
@@ -146,6 +187,16 @@
                 console.error("Error al obtener los vehículos:", error);
             }
         }
+
+        // Eventos
+        formulario.addEventListener('submit', function(event) {
+            event.preventDefault(); // STOP
+
+            if (!confirm("¿Registramos este vehículo?")) {
+                return;
+            }
+            registrarVehiculo();
+        })
 
         // Función autoejecución
         obtenerMarcas();
