@@ -45,4 +45,8 @@ $routes->post('/productos/actualizar', 'Producto::actualizarProducto'); // Actua
 $routes->get('/productos/eliminar/(:num)', 'Producto::eliminar/$1'); // Eliminar un producto
 $routes->get('/productos/buscar/(:num)', 'Producto::buscar/$1'); // Antes de actualizar tenemos que buscar
 
+
 $routes->get('/vehiculos', 'Vehiculo::index');
+
+// BD > Modelo > Controlador > Ruta > JS > VistaHTML
+$routes->get('/vehiculos/listar', 'Vehiculo::getVehiculos'); // Ruta para obtener los datos de los vehículos en formato JSON

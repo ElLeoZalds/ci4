@@ -17,11 +17,11 @@ class VehiculoModel extends Model
     protected $updatedField = "updated_at"; // Campo Tabla Vehículos
 
     // Métodos integrados:
-    // findAll() => Obtener todos los registros
-    // find() => Obtener un registro 
-    // insert() => Insertar un nuevo registro
-    // delete() => Eliminar un registro
-    // update() => Actualizar un registro
+    // findAll() => Obtener todos los registros | SELECT * FROM vehiculos
+    // find() => Obtener un registro | SELECT * FROM vehiculos WHERE id = 1
+    // insert() => Insertar un nuevo registro | INSERT INTO vehiculos (idmarca, modelo, anio, color, precio) VALUES (1, 'Corolla', 2020, 'Rojo', 20000)
+    // delete() => Eliminar un registro | DELETE FROM vehiculos WHERE id = 1
+    // update() => Actualizar un registro | UPDATE vehiculos SET modelo = 'Civic' WHERE id = 1
 
     // ¿Y qué sucede si necesito un método personalizado? Ejemplo: CONSULTA MULTITABLA
     // QUERY BUILDER => Constructor de consultas
