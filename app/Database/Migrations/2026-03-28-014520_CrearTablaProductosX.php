@@ -27,7 +27,7 @@ class CrearTablaProductosX extends Migration
             ],
             "precio" => [
                 "type"          => "DECIMAL",
-                "constraint"    => 7,2,
+                "constraint"    => "7,2",
                 "null"          => false
             ],
             "stock" => [
@@ -40,7 +40,7 @@ class CrearTablaProductosX extends Migration
         $this->forge->addPrimaryKey("id");
 
         //Crear la tabla
-        $this->forge->createTable("ProductosX");
+        $this->forge->createTable("productosX");
     }
 
     public function down()

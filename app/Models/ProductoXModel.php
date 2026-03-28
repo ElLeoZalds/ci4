@@ -5,8 +5,13 @@ use CodeIgniter\Model;
 
 class ProductoXModel extends Model
 {
-    protected $table = "productos";
+    protected $table = "productosX";
     protected $primaryKey = "id";
     protected $returnType = 'array';
     protected $allowedFields = ["tipo", "descripcion", "precio", "stock"];
+
+    public function getProductoX()
+    {
+        return $this->findAll();
+    }
 }

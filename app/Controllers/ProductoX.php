@@ -23,7 +23,7 @@ class ProductoX extends BaseController
     {
         // Se require del modelo
         $productoX = new ProductoXModel();
-        return $this->response->setJSON($productoX->obtenerProductoX());
+        return $this->response->setJSON($productoX->getProductoX());
     }
 
     public function registrarProductoX()
