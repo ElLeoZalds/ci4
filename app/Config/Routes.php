@@ -44,3 +44,9 @@ $routes->post('/productos/guardar', 'Producto::registrarProducto'); // Envía lo
 $routes->post('/productos/actualizar', 'Producto::actualizarProducto'); // Actualiza los datos del form a la tabla
 $routes->get('/productos/eliminar/(:num)', 'Producto::eliminar/$1'); // Eliminar un producto
 $routes->get('/productos/buscar/(:num)', 'Producto::buscar/$1'); // Antes de actualizar tenemos que buscar
+
+$routes->get('/productosX', 'ProductoX::index');
+// BD > Modelo > Controlador > Ruta > JS > VistaHTML
+$routes->get('/productosX/listar', 'ProductoX::getProductoX'); // Ruta para obtener los datos de los productos en formato JSON
+$routes->post('/productosX/registrar', 'ProductoX::registrarProductoX'); // Ruta para registrar un nuevo producto desde el formulario en formato JSON  
+
