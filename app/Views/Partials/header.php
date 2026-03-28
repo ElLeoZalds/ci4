@@ -69,7 +69,6 @@
                         <a class="collapse-item" href="<?= base_url('clientes') ?>">Clientes</a>
                         <a class="collapse-item" href="<?= base_url('proveedores') ?>">Proveedores</a>
                         <a class="collapse-item" href="<?= base_url('productos') ?>">Productos</a>
-                        <a class="collapse-item" href="<?= base_url('vehiculos') ?>">Vehiculos</a>
                     </div>
                 </div>
             </li>
