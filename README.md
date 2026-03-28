@@ -1,6 +1,6 @@
 # Sistema CRUD - SENATI
 
-Aplicación web desarrollada con **CodeIgniter 4** que permite gestionar **clientes, productos y proveedores** mediante un sistema CRUD básico.
+Aplicación web desarrollada con **CodeIgniter 4** que permite gestionar **productosX** mediante un sistema CRUD asíncrono.
 
 📌 **Descripción**
 Este proyecto permite realizar las operaciones principales: **crear, listar, actualizar y eliminar** datos en una base de datos llamada `senati`. También utiliza **migraciones** y seeders para manejar la base de datos de forma ordenada. Es un proyecto pensado para practicar el uso del **patrón MVC** con CodeIgniter 4.
@@ -44,15 +44,7 @@ Este proyecto permite realizar las operaciones principales: **crear, listar, act
 🗄️ **Base de Datos**
 Base de datos: `senati`
 
-**Tabla: clientes**
-
-- id
-- apellidos
-- nombres
-- dni
-- telefono
-
-**Tabla: productos**
+**Tabla: productosX**
 
 - id
 - tipo
@@ -60,20 +52,11 @@ Base de datos: `senati`
 - precio
 - stock
 
-**Tabla: proveedores**
-
-- id
-- razonsocial
-- direccion
-- ruc
-- telefono
-- representante
-
 🔄 **Migraciones y Seeders**
 
 **Migraciones**
 
-1. Crear la base de datos ``senati`
+1. Crear la base de datos ``senati``
 2. Configurar el archivo `.env` con las credenciales
 3. Crear una migración:
 ```bash
@@ -94,11 +77,11 @@ Sirven para insertar datos de prueba o iniciales.
 
 - Crear seeder:
 ```bash
-php spark make:seeder ClientesSeeder
+php spark make:seeder nombreSeeder
 ```
 - Ejecutar seeder:
 ```bash
-php spark db:seed ClientesSeeder
+php spark db:seed nombreSeeder
 ```
 
 👨‍💻 Autor
