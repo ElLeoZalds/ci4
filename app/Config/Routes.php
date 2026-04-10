@@ -53,3 +53,6 @@ $routes->get('/vehiculos/listar', 'Vehiculo::getVehiculos'); // Ruta para obtene
 $routes->post('/vehiculos/registrar', 'Vehiculo::registrarVehiculo'); // Ruta para registrar un nuevo vehículo desde el formulario en formato JSON  
 
 $routes->get('marcas/listar', 'Marca::getMarcas');
+
+// Rutas para reportes
+$routes->get('/reportes/vehiculos', 'ReporteController::generarReporteVehiculo'); // Ruta para generar el reporte de vehículos en PDF   
