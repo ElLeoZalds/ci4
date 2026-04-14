@@ -55,4 +55,5 @@ $routes->post('/vehiculos/registrar', 'Vehiculo::registrarVehiculo'); // Ruta pa
 $routes->get('marcas/listar', 'Marca::getMarcas');
 
 // Rutas para reportes
-$routes->get('/reportes/vehiculos', 'ReporteController::generarReporteVehiculo'); // Ruta para generar el reporte de vehículos en PDF   
+$routes->get('/reportes/vehiculos', 'ReporteController::generarReporteVehiculos'); // Ruta para generar el reporte de vehículos en PDF   
+$routes->get('/reportes/prueba', 'ReporteController::generarReportePrueba'); // Ruta para generar el reporte de vehículos en PDF   

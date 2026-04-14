@@ -29,10 +29,6 @@
             padding: 6px;
             text-align: center;
         }
-
-        tr:nth-child(even) {
-            background-color: #b1b1b1;
-        }
     </style>
 
     <h1>Reporte general de vehículos</h1>

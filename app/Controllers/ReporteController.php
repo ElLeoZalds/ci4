@@ -12,8 +12,34 @@ use Spipu\Html2Pdf\Exception\Html2PdfException; // Manejar excepciones del PDF
 class ReporteController extends BaseController
 {
 
+    public function generarReportePrueba()
+    {
+        // No tenemos modelo de donde negociar los datos...
+        $listaPersonas = [
+            ["apellidos" => "Torres", "nombres" => "Carlos", "telefono" => "956111222", "genero" => "M", "sueldo" => 2500],
+            ["apellidos" => "Quintana", "nombres" => "Juana", "telefono" => "956111333", "genero" => "F", "sueldo" => 3222],
+            ["apellidos" => "Flores", "nombres" => "Pedro", "telefono" => "956111444", "genero" => "M", "sueldo" => 3555],
+            ["apellidos" => "Ochoa", "nombres" => "Hugo", "telefono" => "956111555", "genero" => "M", "sueldo" => 4454],
+            ["apellidos" => "Mendoza", "nombres" => "Silvia", "telefono" => "956111666", "genero" => "F", "sueldo" => 4500]
+        ];
+
+        $estilos = view('Reports/estilos');
+        $html = view('Reports/prueba', ['personas' => $listaPersonas, 'estilos' => $estilos]);
+
+        try {
+            $html2pdf = new Html2Pdf('P', 'A4', 'es', true, 'UTF-8', [20, 15, 15, 15]);
+            $html2pdf->setDefaultFont('Arial');
+            $html2pdf->writeHTML($html);
+            $html2pdf->output('Reporte-prueba.pdf');
+            $this->response->setHeader('Content-Type', 'application/pdf');
+        } catch (Html2PdfException $e) {
+            $html2pdf->clean();
+            throw new \RuntimeException($e->getMessage());
+        }
+    }
+
     // Método para generar un reporte de todos los vehículos
-    public function generarReporteVehiculo()
+    public function generarReporteVehiculos()
     {
         // 1. Obteniendo los datos
         $vehiculo = new VehiculoModel();
