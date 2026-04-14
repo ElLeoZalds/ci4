@@ -19,6 +19,17 @@ class Vehiculo extends BaseController
         return view("Modulos/vehiculos/index", $data);
     }
 
+    public function mostrarUIReportes()
+    {
+        // Los datos se pueden enviar a la vista utilizando un ARREGLO
+        $data = [
+            'header' => view('Partials/header'),
+            'footer' => view('Partials/footer'),
+        ];
+
+        return view("Modulos/vehiculos/config-report-vehiculos", $data);
+    }
+
     // El controlador "SERVIRÁ" resultados asincrónicos, por lo tanto se requiere:
     // 1. El código del servidor https://developer.mozilla.org/es/docs/Web/HTTP/Reference/Status
     // 2. Resultado en formato JSON

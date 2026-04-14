@@ -51,6 +51,7 @@ $routes->get('/vehiculos', 'Vehiculo::index');
 // BD > Modelo > Controlador > Ruta > JS > VistaHTML
 $routes->get('/vehiculos/listar', 'Vehiculo::getVehiculos'); // Ruta para obtener los datos de los vehículos en formato JSON
 $routes->post('/vehiculos/registrar', 'Vehiculo::registrarVehiculo'); // Ruta para registrar un nuevo vehículo desde el formulario en formato JSON  
+$routes->get('/vehiculos/reporte', 'Vehiculo::mostrarUIReportes');
 
 $routes->get('marcas/listar', 'Marca::getMarcas');
 

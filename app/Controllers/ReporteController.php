@@ -24,6 +24,7 @@ class ReporteController extends BaseController
         ];
 
         $estilos = view('Reports/estilos');
+        $senati = base_url('/images/senati.jpg'); // Public
         $html = view('Reports/prueba', ['personas' => $listaPersonas, 'estilos' => $estilos]);
 
         try {
